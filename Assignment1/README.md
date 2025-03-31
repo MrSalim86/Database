@@ -207,3 +207,38 @@ ORDER BY match_date ASC;
 Henter alle kampe i turnering 1 og sorterer dem efter kampdato i stigende rækkefølge.
 
 ---
+
+# 📊 Stored procedures 
+
+## 1. registerPlayer
+```sql
+DELIMITER //
+
+CREATE PROCEDURE registerPlayer (
+    IN in_username VARCHAR(50),
+    IN in_email VARCHAR(100),
+    IN in_ranking INT
+)
+BEGIN
+    INSERT INTO Players (username, email, ranking)
+    VALUES (in_username, in_email, in_ranking);
+END //
+
+DELIMITER ;
+```
+## 2. joinTournament
+
+## 3. submitMatchResult
+
+# 📊 Functions 
+
+## 1. getTotalWins(player_id)
+
+## 2. getTournamentStatus(tournament_id)
+
+# 📊 Triggers
+
+## 1. beforeInsertRegistration
+
+## 2. afterInsertMatch
+
