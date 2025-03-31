@@ -468,3 +468,82 @@ Finder taberen ved at sammenligne player1_id, player2_id og winner_id
 Opdaterer ranking: +10 til vinder, -5 til taber
 
 Hvis winner_id IS NULL, så sker intet
+
+
+
+## 🧪 E-Sport API – Test og databaseintegration
+
+Dette projekt er en simpel .NET (C#) applikation, som interagerer med en MySQL-database for E-sports management. Applikationen tilbyder både **Stored Procedures** og **direkte SQL** (PreparedStatements) til at udføre centrale operationer i systemet.
+
+---
+
+### 🔌 Funktionalitet
+
+En klasse kaldet `EsFunctions` er oprettet for at håndtere følgende databaseoperationer:
+
+1. **CallJoinTournament**  
+   Kalder stored procedure `joinTournament` for at tilmelde en spiller til en turnering.
+
+2. **JoinTournamentDirect**  
+   Tilmeld en spiller direkte til en turnering uden stored procedure (via raw SQL).
+
+3. **CallSubmitMatchResult**  
+   Kalder stored procedure `submitMatchResult` for at registrere en vinder af en kamp.
+
+4. **SubmitMatchResultDirect**  
+   Registrerer en vinder af en kamp direkte via SQL uden stored procedure.
+
+---
+
+### 🧪 Test API via Swagger
+
+Når du kører applikationen, kan du teste alle funktioner via Swagger UI:
+
+```
+https://localhost:{port}/swagger
+```
+
+Eksempler på endpoints:
+
+- `POST /EsTest/join?playerId=1&tournamentId=1`  
+- `POST /EsTest/join-direct?playerId=1&tournamentId=1`  
+- `POST /EsTest/submit?matchId=1&winnerId=1`  
+- `POST /EsTest/submit-direct?matchId=1&winnerId=1`  
+
+---
+
+### ⚙️ Teknologier
+
+- .NET 7/8
+- C#
+- MySQL
+- Stored Procedures, Triggers, Functions
+- Swagger (OpenAPI)
+
+---
+
+## 💬 Kort refleksion over brugen af SQL-programmering
+
+I vores projekt har vi valgt at bruge SQL-programmering aktivt – både gennem stored procedures, functions og triggers i databasen, og direkte SQL-kald fra vores C# backend.
+
+### ✅ Fordele vi har oplevet
+
+- Det var smart at samle forretningslogik tæt på databasen – f.eks. at en spiller ikke kan tilmelde sig en turnering, hvis max antal deltagere er nået.
+- Stored procedures gjorde det nemt og hurtigt at genbruge bestemte handlinger uden at gentage SQL-kode i backend.
+- Ved at bruge parameterisering og prepared statements undgår vi SQL injection og får mere sikker kode.
+- Vi synes også, det giver bedre struktur og overblik, især når flere arbejder med databasen.
+
+### ⚠️ Udfordringer vi har mødt
+
+- Det kan være svært at teste og versionstyre stored procedures og triggers, fordi de lever “inde i databasen” og ikke som filer i projektet.
+- Det gør vores system mere afhængigt af MySQL, så det ville være besværligt at skifte til en anden database senere.
+- Avanceret SQL-logik kan hurtigt blive rodet, hvis man ikke er opmærksom på struktur og navngivning.
+
+### 🎯 Vores tilgang
+
+Vi har forsøgt at finde en god balance:  
+Vi bruger SQL til det, der giver mening at håndtere tæt på data (f.eks. regler og validering),  
+og .NET til det, der kræver fleksibilitet og skal testes eller udvides senere.
+
+Det har fungeret rigtig godt i vores løsning.
+
