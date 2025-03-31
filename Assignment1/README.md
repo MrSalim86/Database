@@ -230,10 +230,79 @@ DELIMITER ;
 ```sql
 CALL registerPlayer('PlayerX', 'playerx@example.com', 1234);
 ```
-  
+Beskrivelse:
+Proceduren registerPlayer tager 3 input-parametre: username, email og ranking.
+
+Når du kalder CALL registerPlayer(...), oprettes en ny spiller i Players-tabellen med de værdier. 
+
 ## 2. joinTournament
+```sql
+DELIMITER //
+
+CREATE PROCEDURE joinTournament (
+    IN in_player_id INT,
+    IN in_tournament_id INT
+)
+BEGIN
+    -- Tjek om spilleren allerede er tilmeldt turneringen
+    IF NOT EXISTS (
+        SELECT 1
+        FROM Tournament_Registrations
+        WHERE player_id = in_player_id AND tournament_id = in_tournament_id
+    ) THEN
+        INSERT INTO Tournament_Registrations (tournament_id, player_id)
+        VALUES (in_tournament_id, in_player_id);
+    END IF;
+END //
+
+DELIMITER ;
+```
+🔍 Hvordan bruger man den:
+
+```sql
+CALL joinTournament(2, 1);
+```
+Beskrivelse:
+Tager 2 input-parametre: player_id og tournament_id
+
+Tjekker, om spilleren allerede er tilmeldt turneringen
+
+Tilmeld spilleren, hvis det ikke er tilfældet
 
 ## 3. submitMatchResult
+```sql
+DELIMITER //
+
+CREATE PROCEDURE submitMatchResult (
+    IN in_match_id INT,
+    IN in_winner_id INT
+)
+BEGIN
+    -- Tjek om kampen eksisterer og har ingen vinder endnu
+    IF EXISTS (
+        SELECT 1
+        FROM Matches
+        WHERE match_id = in_match_id AND winner_id IS NULL
+    ) THEN
+        -- Opdater kampen med vinderen
+        UPDATE Matches
+        SET winner_id = in_winner_id
+        WHERE match_id = in_match_id;
+    END IF;
+END //
+
+DELIMITER ;
+```
+🔍 Hvordan bruger man den:
+```sql
+CALL submitMatchResult(1, 1);
+```
+Beskrivelse:
+Tager to inputparametre: match_id og winner_id
+
+Tjekker om kampen findes og ikke allerede har en vinder
+
+Hvis ja, opdateres winner_id i Matches
 
 # 📊 Functions 
 
