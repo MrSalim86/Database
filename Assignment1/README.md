@@ -307,12 +307,164 @@ Hvis ja, opdateres winner_id i Matches
 # 📊 Functions 
 
 ## 1. getTotalWins(player_id)
+```sql
+DELIMITER //
+
+CREATE FUNCTION getTotalWins(in_player_id INT)
+RETURNS INT
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+    DECLARE total_wins INT;
+
+    SELECT COUNT(*) INTO total_wins
+    FROM Matches
+    WHERE winner_id = in_player_id;
+
+    RETURN total_wins;
+END //
+
+DELIMITER ;
+```
+🔍 Hvordan bruger man den:
+```sql
+SELECT getTotalWins(1) AS wins;
+```
+Beskrivelse:
+Funktionen tager en player_id som input
+
+Den tæller hvor mange gange denne spiller er registreret som vinder i Matches
+
+Returnerer tallet som resultat
 
 ## 2. getTournamentStatus(tournament_id)
+```sql
+DELIMITER //
+
+CREATE FUNCTION getTournamentStatus(in_tournament_id INT)
+RETURNS VARCHAR(20)
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+    DECLARE status VARCHAR(20);
+    DECLARE total_matches INT;
+    DECLARE completed_matches INT;
+    DECLARE start_date DATE;
+
+    -- Hent startdato
+    SELECT T.start_date INTO start_date
+    FROM Tournaments T
+    WHERE T.tournament_id = in_tournament_id;
+
+    -- Tæl antal kampe i turneringen
+    SELECT COUNT(*) INTO total_matches
+    FROM Matches
+    WHERE tournament_id = in_tournament_id;
+
+    -- Tæl antal kampe med en vinder
+    SELECT COUNT(*) INTO completed_matches
+    FROM Matches
+    WHERE tournament_id = in_tournament_id AND winner_id IS NOT NULL;
+
+    -- Bestem status
+    IF CURDATE() < start_date THEN
+        SET status = 'upcoming';
+    ELSEIF total_matches > 0 AND total_matches = completed_matches THEN
+        SET status = 'completed';
+    ELSE
+        SET status = 'ongoing';
+    END IF;
+
+    RETURN status;
+END //
+
+DELIMITER ;
+
+```
+🔍 Hvordan bruger man den:
+```sql
+SELECT getTournamentStatus(1) AS status;
+```
+Beskrivelse:
+Tjekker om turneringen endnu ikke er startet → upcoming
+
+Hvis alle kampe i turneringen har en winner_id, så er den completed
+
+Hvis nogle kampe mangler en vinder, men turneringen er startet, er den ongoing
 
 # 📊 Triggers
 
 ## 1. beforeInsertRegistration
+```sql
+DELIMITER //
+
+CREATE TRIGGER beforeInsertRegistration
+BEFORE INSERT ON Tournament_Registrations
+FOR EACH ROW
+BEGIN
+    DECLARE current_player_count INT;
+    DECLARE max_allowed_players INT;
+
+    -- Tæl hvor mange spillere allerede er tilmeldt denne turnering
+    SELECT COUNT(*) INTO current_player_count
+    FROM Tournament_Registrations
+    WHERE tournament_id = NEW.tournament_id;
+
+    -- Find max tilladte spillere for turneringen
+    SELECT max_players INTO max_allowed_players
+    FROM Tournaments
+    WHERE tournament_id = NEW.tournament_id;
+
+    -- Hvis tilmeldte spillere >= max, så fejl
+    IF current_player_count >= max_allowed_players THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Max antal spillere er nået for denne turnering.';
+    END IF;
+END //
+
+DELIMITER ;
+```
+Beskrivelse:
+Kører før en spiller bliver registreret i Tournament_Registrations
+
+Tæller hvor mange spillere der allerede er registreret til den turnering
+
+Sammenligner med max_players fra Tournaments
+
+Hvis grænsen er nået, stopper den med en fejlbesked
 
 ## 2. afterInsertMatch
+```sql
+DELIMITER //
 
+CREATE TRIGGER afterInsertMatch
+AFTER INSERT ON Matches
+FOR EACH ROW
+BEGIN
+    DECLARE loser_id INT;
+
+    -- Tjek at der er en vinder
+    IF NEW.winner_id IS NOT NULL THEN
+        -- Find taberens ID
+        IF NEW.player1_id = NEW.winner_id THEN
+            SET loser_id = NEW.player2_id;
+        ELSE
+            SET loser_id = NEW.player1_id;
+        END IF;
+
+        -- Opdater ranking
+        UPDATE Players SET ranking = ranking + 10 WHERE player_id = NEW.winner_id;
+        UPDATE Players SET ranking = ranking - 5 WHERE player_id = loser_id;
+    END IF;
+END //
+
+DELIMITER ;
+```
+Beskrivelse:
+Kører automatisk efter en ny kamp bliver tilføjet til Matches
+
+Finder taberen ved at sammenligne player1_id, player2_id og winner_id
+
+Opdaterer ranking: +10 til vinder, -5 til taber
+
+Hvis winner_id IS NULL, så sker intet
