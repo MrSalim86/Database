@@ -226,6 +226,11 @@ END //
 
 DELIMITER ;
 ```
+🔍 Hvordan bruger man den:
+```sql
+CALL registerPlayer('PlayerX', 'playerx@example.com', 1234);
+```
+  
 ## 2. joinTournament
 
 ## 3. submitMatchResult
