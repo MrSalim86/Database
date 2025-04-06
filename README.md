@@ -1,6 +1,6 @@
 # 📚 Database
 
-## 👥 Gruppe MJ  
+## 👥 Gruppe D
 - **Mohamed Salim**  
 - **Jamal Ahmed**  
 
