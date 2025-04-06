@@ -13,19 +13,20 @@ Velkommen til vores repository for databaseopgaver. Her finder du en oversigt ov
 ## 🗂️ Opgaver
 
 1. [📁 Assignment 1](./Assignment1)  
-   _Introduktion til databasedesign og ER-diagrammer._
+   _E-sports turneringsplatform._
 
 2. [📁 Assignment 2](./Assignment2)  
-   _Normalisering og oprettelse af SQL-tabeller._
+   _Databasedesign af Fitnesscenter._
 
 3. [📁 Assignment 3](./Assignment3)  
-   _CRUD-operationer og avancerede forespørgsler._
-
+   _Part 1: Optimistic & Pessimistic Concurrency Control_
+   _Part 2: Denormalization & Partitions & Query Optimization_
+  
 4. [📁 Assignment 4](./Assignment4)  
-   _Stored procedures og triggers._
+   ?
 
 5. [📁 Assignment 5](./Assignment5)  
-   _Optimering og sikkerhed i databaser._
+   ?
 
 ---
 
