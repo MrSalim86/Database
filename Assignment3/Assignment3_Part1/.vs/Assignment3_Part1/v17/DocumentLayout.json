@@ -1,0 +1,164 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|c:\\users\\moham\\onedrive\\datamatiker\\onedrive\\skrivebord\\cphbusniss\\software developer\\semester 2\\database\\assignment3\\assignment3_part1\\performancetester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|solutionrelative:performancetester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|c:\\users\\moham\\onedrive\\datamatiker\\onedrive\\skrivebord\\cphbusniss\\software developer\\semester 2\\database\\assignment3\\assignment3_part1\\controllers\\performancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|solutionrelative:controllers\\performancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|c:\\users\\moham\\onedrive\\datamatiker\\onedrive\\skrivebord\\cphbusniss\\software developer\\semester 2\\database\\assignment3\\assignment3_part1\\controllers\\matchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|solutionrelative:controllers\\matchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|c:\\users\\moham\\onedrive\\datamatiker\\onedrive\\skrivebord\\cphbusniss\\software developer\\semester 2\\database\\assignment3\\assignment3_part1\\tournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|solutionrelative:tournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|c:\\users\\moham\\onedrive\\datamatiker\\onedrive\\skrivebord\\cphbusniss\\software developer\\semester 2\\database\\assignment3\\assignment3_part1\\controllers\\tournamentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|solutionrelative:controllers\\tournamentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|c:\\users\\moham\\onedrive\\datamatiker\\onedrive\\skrivebord\\cphbusniss\\software developer\\semester 2\\database\\assignment3\\assignment3_part1\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|solutionrelative:dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|c:\\users\\moham\\onedrive\\datamatiker\\onedrive\\skrivebord\\cphbusniss\\software developer\\semester 2\\database\\assignment3\\assignment3_part1\\controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|solutionrelative:controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|c:\\users\\moham\\onedrive\\datamatiker\\onedrive\\skrivebord\\cphbusniss\\software developer\\semester 2\\database\\assignment3\\assignment3_part1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A0A5A83-3DF0-410D-81F8-49E61D7BA53C}|Assignment3_Part1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MatchController.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Controllers\\MatchController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MatchController.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Controllers\\MatchController.cs",
+              "RelativeToolTip": "Controllers\\MatchController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T07:48:04.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegistrationController.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Controllers\\RegistrationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RegistrationController.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Controllers\\RegistrationController.cs",
+              "RelativeToolTip": "Controllers\\RegistrationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T07:48:33.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PerformanceController.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Controllers\\PerformanceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PerformanceController.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Controllers\\PerformanceController.cs",
+              "RelativeToolTip": "Controllers\\PerformanceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T07:48:55.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PerformanceTester.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\PerformanceTester.cs",
+              "RelativeDocumentMoniker": "PerformanceTester.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\PerformanceTester.cs",
+              "RelativeToolTip": "PerformanceTester.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T07:39:35.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DbHelper.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\DbHelper.cs",
+              "RelativeDocumentMoniker": "DbHelper.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\DbHelper.cs",
+              "RelativeToolTip": "DbHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T07:38:32.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TournamentService.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\TournamentService.cs",
+              "RelativeDocumentMoniker": "TournamentService.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\TournamentService.cs",
+              "RelativeToolTip": "TournamentService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAArwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T07:39:22.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TournamentController.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Controllers\\TournamentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TournamentController.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Controllers\\TournamentController.cs",
+              "RelativeToolTip": "Controllers\\TournamentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T07:47:42.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Datamatiker\\OneDrive\\Skrivebord\\CPHBusniss\\Software Developer\\Semester 2\\Database\\Assignment3\\Assignment3_Part1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T07:49:07.907Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
