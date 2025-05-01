@@ -2,8 +2,8 @@
 
 Opgave 1: Automatisk opdatering af total_amount i Orders
 I denne opgave løste vi problemet med at holde total_amount i Orders-tabellen opdateret automatisk, når der sker ændringer i OrderDetails.
-DELIMITER //
 
+DELIMITER //
 CREATE TRIGGER after_delete_order_detail
 AFTER DELETE ON OrderDetails
 FOR EACH ROW
@@ -17,9 +17,9 @@ BEGIN
   WHERE order_id = OLD.order_id;
 END;
 
-
 //
 DELIMITER ;
+
 
 DELIMITER //
 
