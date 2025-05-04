@@ -1,12 +1,9 @@
 # Assignment3 part 2
 
-opgave1. 
+Opgave 1: Automatisk opdatering af total_amount i Orders
+I denne opgave løste vi problemet med at holde total_amount i Orders-tabellen opdateret automatisk, når der sker ændringer i OrderDetails.
 
-vi løst problemt disse:
-
- 
 DELIMITER //
-
 CREATE TRIGGER after_delete_order_detail
 AFTER DELETE ON OrderDetails
 FOR EACH ROW
@@ -20,9 +17,9 @@ BEGIN
   WHERE order_id = OLD.order_id;
 END;
 
-
 //
 DELIMITER ;
+
 
 DELIMITER //
 
@@ -61,12 +58,16 @@ END;
 //
 DELIMITER ;
 
-Diskussion (forklaring):
+Fordele:
+Hurtigere rapportering og forespørgsler, fordi total_amount altid er forudberegnet.
 
-Fordele: Hurtigere rapportering og forespørgsler.
+Ulemper:
+Risiko for inkonsistens, hvis triggers ikke fungerer korrekt, eller hvis OrderDetails ændres uden triggers.
 
-Ulemper: Data kan blive inkonsistent, hvis man ændrer på OrderDetails, men glemmer at opdatere total_amount.
-
+Kort forklaring
+Vi har oprettet tre triggers:
+Når der indsættes, opdateres eller slettes en linje i OrderDetails, genberegnes total_amount i den tilhørende ordre i Orders.
+Dette sikrer, at total_amount altid er korrekt uden manuel opdatering.
 
 Opgave 2: 
 
@@ -84,12 +85,8 @@ END;
 
 //
 DELIMITER ;
-
-
 Diskussion (forklaring):
-
 Fordele: Mindre behov for joins, hurtigere læsning.
-
 Ulemper: Hvis kundens info ændres, skal man opdatere alle ordrer manuelt.
 
 Opgave 3: 
