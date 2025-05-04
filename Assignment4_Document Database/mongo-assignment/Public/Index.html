@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB Tweets App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color: #f5f7fa;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .tweet-card {
+        background-color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .tweet-card h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+      .tweet-card p {
+        margin: 5px 0;
+      }
+      .form-section {
+        margin-top: 40px;
+      }
+      input[type="text"] {
+        padding: 10px;
+        width: 70%;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>MongoDB Tweets App</h1>
+
+    <button onclick="fetchTweets()">Fetch 10 Tweets</button>
+
+    <div id="tweets"></div>
+
+    <div class="form-section">
+      <h2>Insert a New Tweet</h2>
+      <input type="text" id="newTweetText" placeholder="Enter tweet text" />
+      <button onclick="insertTweet()">Insert Tweet</button>
+    </div>
+
+    <script>
+      async function fetchTweets() {
+        const response = await fetch("/tweets");
+        const tweets = await response.json();
+        const container = document.getElementById("tweets");
+        container.innerHTML = "";
+        tweets.forEach(tweet => {
+          const card = document.createElement("div");
+          card.className = "tweet-card";
+          card.innerHTML = `
+          <h3>@${tweet.user?.screen_name || "unknown"} (${
+            tweet.created_at?.substring(0, 16) || "Unknown date"
+          })</h3>
+          <p><strong>Text:</strong> ${tweet.text}</p>
+          <p><strong>Hashtags:</strong> ${
+            tweet.entities?.hashtags?.map(h => "#" + h.text).join(", ") ||
+            "None"
+          }</p>
+        `;
+          container.appendChild(card);
+        });
+      }
+
+      async function insertTweet() {
+        const text = document.getElementById("newTweetText").value;
+        if (!text) {
+          alert("Please enter a tweet text.");
+          return;
+        }
+        await fetch("/tweets", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text }),
+        });
+        alert("Tweet inserted!");
+        document.getElementById("newTweetText").value = "";
+        fetchTweets();
+      }
+    </script>
+  </body>
+</html>
